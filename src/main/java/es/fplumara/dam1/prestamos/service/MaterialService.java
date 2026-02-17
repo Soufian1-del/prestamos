@@ -12,18 +12,18 @@ import java.util.Optional;
 
 
 public class MaterialService{
-    Repository<Material> materialRepository;
+    Repository<Material> materialRepository; //PREGUNTAR
 
     public void RegistrarMaterial(Material m){
         if(m.getId()!=null){
             throw new RuntimeException("ya existe un material con este id(cambiar la excepcion mas tarde)");
-        } else if(m==null || m.getId()==null || m.getId().isEmpty()){
+        } else if(m==null || m.getId()==null || m.getId().isEmpty()){ //PREGUNTAR
             throw new IllegalArgumentException("El material no existe");
         }
     }
     public void darDeBaja(String idMaterial){
-       Optional<Material> variable = materialRepository.findById(idMaterial);
-        Material material = variable.get();
+       Optional<Material> variable = materialRepository.findById(idMaterial); //PREGUNTAR
+        Material material = variable.get(); //PREGUNTAR
         if(idMaterial==null){
             throw new RuntimeException("El material elegido no existe, no se puede dar de baja(cambiar la excepcion mas tarde)");
         }
@@ -36,6 +36,6 @@ public class MaterialService{
     }
    public List<Material> listar(){
         List<Material> materiales = List.of();
-        materialRepository.listAll(materiales);
+        return materialRepository.listAll();
     }
 }
