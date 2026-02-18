@@ -1,5 +1,7 @@
 package es.fplumara.dam1.prestamos.service;
 
+import es.fplumara.dam1.prestamos.exception.MaterialNoDisponibleException;
+import es.fplumara.dam1.prestamos.exception.NoEncontradoException;
 import es.fplumara.dam1.prestamos.model.EstadoMaterial;
 import es.fplumara.dam1.prestamos.model.Material;
 import es.fplumara.dam1.prestamos.model.prestamo;
@@ -21,9 +23,9 @@ public class PrestamoService {
             throw new IllegalArgumentException("los valores no pueden ser nulos");
         }
         if(variable.isEmpty()){
-            throw new RuntimeException("material no encontrado(cambiar excepción)");
+            throw new NoEncontradoException("material no encontrado");
         } else if(!material.getEstado().equals(EstadoMaterial.DISPONIBLE)){
-            throw new RuntimeException("el material no esta disponible(cambiar excepción)");
+            throw new MaterialNoDisponibleException("el material no esta disponible");
         } else{
             prestamo prestamoNuevo = new prestamo(UUID.randomUUID().toString(),idMaterial,profesor,fecha);
             prestamoRepository.save(prestamoNuevo);
@@ -40,10 +42,10 @@ public class PrestamoService {
             throw new IllegalArgumentException("el material no puede estar vacío");
         }
         if (variable.isEmpty()) {
-            throw new IllegalArgumentException("el material no puede estar vacío(cambiar excepción)");
+            throw new NoEncontradoException("el material no puede estar vacío");
         }
         if (!material.getEstado().equals(EstadoMaterial.PRESTADO)) {
-            throw new RuntimeException("El material solicitado no esta prestado(cambiar excepcion)");
+            throw new MaterialNoDisponibleException("El material solicitado no esta prestado");
         } else {
             material.setEstado(EstadoMaterial.DISPONIBLE);
             materialRepository.save(material);
