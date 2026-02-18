@@ -8,6 +8,45 @@ public class prestamo implements Identificable{
     private String profesor;
     private LocalDate fecha;
 
+    public prestamo(String id, String idMaterial, String profesor, LocalDate fecha) {
+        this.id = id;
+        this.idMaterial = idMaterial;
+        this.profesor = profesor;
+        this.fecha = fecha;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getIdMaterial() {
+        return idMaterial;
+    }
+
+    public void setIdMaterial(String idMaterial) {
+        this.idMaterial = idMaterial;
+    }
+
+    public String getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(String profesor) {
+        this.profesor = profesor;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
     @Override
     public String getID() {
         return "";
