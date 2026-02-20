@@ -67,7 +67,7 @@ Debes añadir exactamente estas dependencias y versiones:
   - artifactId: `exec-maven-plugin`
   - version: `3.6.3`
   - configuración obligatoria:
-    - `<mainClass>es.fplumara.dam1.prestamos.app.Main</mainClass>`
+    - `<mainClass>es.fplumara.dam1.Prestamos.app.Main</mainClass>`
 
 ✅ Debe poder ejecutarse:
 - `mvn clean test`
@@ -80,12 +80,12 @@ Debes añadir exactamente estas dependencias y versiones:
 ## 3.1 Capas y paquetes
 Debes organizar el código por capas usando estos paquetes:
 
-- `es.fplumara.dam1.prestamos.app`
-- `es.fplumara.dam1.prestamos.model`
-- `es.fplumara.dam1.prestamos.repository`
-- `es.fplumara.dam1.prestamos.service`
-- `es.fplumara.dam1.prestamos.csv`
-- `es.fplumara.dam1.prestamos.exception`
+- `es.fplumara.dam1.Prestamos.app`
+- `es.fplumara.dam1.Prestamos.model`
+- `es.fplumara.dam1.Prestamos.repository`
+- `es.fplumara.dam1.Prestamos.service`
+- `es.fplumara.dam1.Prestamos.csv`
+- `es.fplumara.dam1.Prestamos.exception`
 
 No se permite “todo en Main”.
 
@@ -191,7 +191,7 @@ PROYECTOR,M010,Proyector Epson,DISPONIBLE,3200,video|salon
 
 ## 4.2 Código CSV proporcionado (no editar)
 En el repositorio se proporcionan clases de utilidad en el paquete:
-- `es.fplumara.dam1.prestamos.csv`
+- `es.fplumara.dam1.Prestamos.csv`
 
 Por ejemplo:
 - `CsvMaterialImporter`
