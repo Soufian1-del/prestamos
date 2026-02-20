@@ -35,6 +35,5 @@ class PrestamosServiceTest {
         Material material  = new Proyector(10, Collections.singleton("oferta"), EstadoMaterial.DISPONIBLE,"LumensOffer","Wood1213");
         Prestamo p = prestamoService.crearPrestamo("Wood1213", profesor, fecha);
         prestamoRepository.save(p);
-
     }
 }
