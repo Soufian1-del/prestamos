@@ -4,9 +4,9 @@ Este diagrama sirve como referencia para implementar el modelo, repositorios y s
 **Debes crear tú las clases/interfaces/enums** en los paquetes indicados.
 
 Paquetes recomendados (según enunciado):
-- `es.fplumara.dam1.prestamos.model`
-- `es.fplumara.dam1.prestamos.repository`
-- `es.fplumara.dam1.prestamos.service`
+- `es.fplumara.dam1.Prestamos.model`
+- `es.fplumara.dam1.Prestamos.repository`
+- `es.fplumara.dam1.Prestamos.service`
 
 > Nota: el bloque CSV está proporcionado y no se modifica. Por eso no aparece aquí.
 
