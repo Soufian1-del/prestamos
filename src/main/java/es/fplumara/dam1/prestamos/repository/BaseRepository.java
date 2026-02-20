@@ -8,7 +8,11 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BaseRepository <T extends Identificable> implements Repository<T>{
-    Map<String, T> datos;
+    private Map<String, T> datos;
+
+    public BaseRepository() {
+        datos = new HashMap<>();
+    }
 
     //Métodos abstractos
     @Override
@@ -18,14 +22,13 @@ public class BaseRepository <T extends Identificable> implements Repository<T>{
 
     @Override
     public Optional<T> findById(String id) {
-        datos.get(id);
-        return Optional.empty();
+        T elemento = datos.get(id);
+        return Optional.ofNullable(elemento);
     }
 
     @Override
     public List<T> listAll() {
-        datos.forEach((s, t) -> System.out.println(s+" "+t));
-        return List.of();
+        return datos.values().stream().toList();
     }
 
     @Override
